@@ -1,0 +1,23 @@
+{
+  "name": "rockpaperscissors",
+  "version": "1.0.0",
+  "description": "Game of Rock Paper and Scissors in Javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndrejSalka/rockPaperScissors.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AndrejSalka/rockPaperScissors/issues"
+  },
+  "homepage": "https://github.com/AndrejSalka/rockPaperScissors#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.2.6"
+  }
+}
