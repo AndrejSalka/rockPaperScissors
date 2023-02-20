@@ -9,14 +9,19 @@
 </head>
 <body class="bg-slate-400">
     <h1 class="bg-red-600">Rock Paper Scissors</h1>
-    <h2>Bot</h2>
-    <h2>Player</h3>
+    <h2>Bot Score: <span id="bot"></span></h2>
+    <h2>Player Score: <span id="player"></span></h3>
 
     <div class="flex w-1/2 justify-evenly">
-        <img src="../img/rock.jpg" alt="rock" class="h-48">
-        <img src="../img/paper.jpg" alt="paper" class="h-48">
-        <img src="../img/scissors.jpg" alt="scissors" class="h-48">
+        <img src="../img/rock.jpg" alt="rock" class="h-48" id="rock">
+        <img src="../img/paper.jpg" alt="paper" class="h-48" id="paper">
+        <img src="../img/scissors.jpg" alt="scissors" class="h-48" id="scissors">
+
     </div>
+
+    <button class="invisible">Reset</button>
+
+    <h3></h3>
     <script src="main.js"></script>
 </body>
 </html>
