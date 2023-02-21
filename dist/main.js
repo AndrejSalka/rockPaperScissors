@@ -1,5 +1,9 @@
-let scorePlayer = '0'
-let scoreBot = '0'
+
+
+
+let scorePlayer = localStorage.getItem('scorePlayer')
+let scoreBot = localStorage.getItem('scoreBot')
+console.log(scoreBot++, scorePlayer++)
 let roundsPlayed = '0'
 let result = document.querySelector('h3')
 let rockClick = document.getElementById('rock').addEventListener('click', function(){
@@ -34,6 +38,7 @@ function game(playerChoice){
         (playerChoice === 'paper' && comp === 'rock')){
          result = `You Win! You chose ${playerChoice} and computer chose ${comp}`
          scorePlayer++
+         localStorage.setItem('scorePlayer', scorePlayer)
          roundsPlayed++
         }else if(
             (playerChoice === 'rock' && comp === 'paper') ||
@@ -41,11 +46,22 @@ function game(playerChoice){
             (playerChoice === 'paper' && comp === 'scissors')){
              result = `You Lose! You chose ${playerChoice} and computer chose ${comp}`
              scoreBot++
+             localStorage.setItem('scoreBot', scoreBot)
              roundsPlayed++
             }
 
-            if((roundsPlayed=== 5) && scorePlayer>scoreBot|| scorePlayer<scoreBot){
-                console.log('hello')
+            console.log(roundsPlayed)
+            let win;
+            if(scoreBot>scorePlayer){
+                win = 'Computer'
+            }else{
+                win = 'You'
+            }
+            if(roundsPlayed=== 5){
+                `${win} Win! Score is ${scoreBot} to ${scorePlayer}`
+                document.querySelector('.hide').style.display = 'block'
+            }else if(roundsPlayed === 5 && scoreBot===scorePlayer){
+                game(playerChoice)
             }
 
 
@@ -55,9 +71,13 @@ function game(playerChoice){
          document.querySelector('#bot').innerText = scoreBot   
     
 }
-
+document.querySelector('.hide').addEventListener('click', reset)
 function reset(){
-    
+
+    localStorage.setItem('scoreBot', '0')
+    localStorage.setItem('scorePlayer', '0')
+    scoreBot = 0
+    scorePlayer = 0
 }
 
 

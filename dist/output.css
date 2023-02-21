@@ -566,3 +566,7 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(148 163 184 / var(--tw-bg-opacity));
 }
+
+.hide{
+  display: none;
+}
